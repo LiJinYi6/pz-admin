@@ -87,6 +87,20 @@ export default defineConfig({
   plugins: [ElementPlus()],
 })
     ```
+### 导入icon图标
+先下载
+![alt text](image.png)
+```js
+// main.ts
+
+// 如果您正在使用CDN引入，请删除下面一行。
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
+const app = createApp(App)
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
+```
    
 # 设计布局
 ## layout布局

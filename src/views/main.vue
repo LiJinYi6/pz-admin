@@ -5,16 +5,17 @@
         </div>
         <div class="right">
             <div class="top">
-                top
+                <Top></Top>
             </div>
             <div class="main">
-                main
+                <router-view></router-view>
             </div>
         </div>
     </div>
   </template>
 
 <script setup>
+import Top from '../components/top.vue';
 import Aside from '../components/aside.vue';
 </script>
 
@@ -38,8 +39,13 @@ import Aside from '../components/aside.vue';
     justify-content: center;
 }
 .top{
-    flex:1;
+    flex:0.5;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
 }
 .main{
     flex:4;

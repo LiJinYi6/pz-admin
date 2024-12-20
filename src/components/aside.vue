@@ -1,27 +1,20 @@
 <template>
     <el-menu
-        default-active="2"
+        default-active=""
         class="el-menu-vertical-demo asideContainer"
-        @open="handleOpen"
-        @close="handleClose"
+        router="true"
       >
         <p class="title">陪诊管理</p>
-        <Menu :menuDate="menuDate"></Menu>
+        <TreeMenu :menuDate="menuDate"></TreeMenu>
     </el-menu>
 </template>
 
 <script setup>
 import { reactive } from 'vue';
-import Menu from './menu.vue';
+import TreeMenu from './TreeMenu.vue';
 import { useRouter } from 'vue-router';
-const handleOpen = (key, keyPath) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key, keyPath) => {
-  console.log(key, keyPath)
-}
 const router=useRouter()
-const menuDate=reactive({router.options.routes[0].children})
+const menuDate=reactive(router.options.routes[0].children)
 
 
 </script>
@@ -36,5 +29,9 @@ const menuDate=reactive({router.options.routes[0].children})
         line-height: 50px;
         color:lightblue
     }
+    background-color: rgba(255, 235, 122, 0.288);
+}
+.el-menu-item{
+  background-color: rgba(255, 235, 122, 0.288) ;
 }
 </style>
